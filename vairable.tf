@@ -22,3 +22,9 @@ variable "region" {
   default     = ""
 }
 
+variable "bucket_name" {
+  description = "S3 bucket name for logs (must be globally unique)"
+  type        = string
+  default = ""
+}
+
