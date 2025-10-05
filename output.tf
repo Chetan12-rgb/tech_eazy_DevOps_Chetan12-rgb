@@ -1,9 +1,6 @@
-output "ec2_public_ip" {
-  description = "Public IP of the EC2 instance"
-  value       = "http://${aws_instance.java_app.public_ip}:8080/hello"
+# ELB DNS to access the app via Load Balancer
+output "elb_dns_name" {
+  description = "DNS name of the Load Balancer"
+  value       = aws_elb.app_elb.dns_name
 }
 
-output "s3_bucket_name" {
-  description = "Name of the S3 bucket for logs"
-  value       = aws_s3_bucket.logs_bucket.bucket
-}

@@ -1,30 +1,41 @@
-variable "ami_id" {
-  description = "AMI ID for the EC2 instance"
+#AWS Region
+variable "region" {
+  description = "The AWS region to deploy resources in"
   type        = string
-  default     = ""  
+  default     = "ap-south-1"
 }
+
+# EC2 Instance details
+variable "ami_id" {
+  description = "The AMI ID to use for the EC2 instance"
+  type        = string
+  default     = "ami-02d26659fd82cf299"
+}
+
 
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = ""
+  default     = "t2.micro"
 }
 
-variable "key_pair" {
-    description = "Name of the key pair to use for the EC2 instance"
-    type        = string
-    default = ""
-}
-
-variable "region" {
-  description = "AWS region"
+variable "key_name" {
+  description = "Key pair name to SSH into the instance"
   type        = string
-  default     = ""
+  default = "ThisIsKey"
 }
 
+#S3 Bucket for ELB logs
 variable "bucket_name" {
-  description = "S3 bucket name for logs (must be globally unique)"
+  description = "Name of the S3 bucket for ELB logs"
   type        = string
-  default = ""
+  default = "thisismybucketareyaarlelena2024"
 }
+variable "instance_count" {
+  description = "EC2 instance Count"
+  type        = number
+  default     = 3
+}
+
+
 
